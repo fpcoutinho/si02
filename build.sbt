@@ -1,6 +1,4 @@
-import sbt.Keys._
-
-name := """lab02"""
+name := """si1-lab2"""
 
 version := "1.0-SNAPSHOT"
 
@@ -17,12 +15,3 @@ libraryDependencies ++= Seq(
   "org.hibernate" % "hibernate-core" % "4.2.3.Final",
   "org.hibernate" % "hibernate-entitymanager" % "4.2.3.Final"
 )
-
-
-
-
-
-
-
-
-

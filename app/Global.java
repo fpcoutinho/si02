@@ -1,4 +1,4 @@
-/*import play.*;
+import play.*;
 import models.Meta;
 import models.dao.GenericDAO;
 import play.db.jpa.JPA;
@@ -8,27 +8,28 @@ public class Global extends GlobalSettings {
     private static GenericDAO dao = new GenericDAO();
 
     public void onStart(Application app) {
-        Logger.info("Aplicação inicializada...");
+
 
         JPA.withTransaction(() -> {
-            dao.persist(new Meta("Html", "Aprender html para conseguir pagar SI1", "media", "1° semana"));
+            dao.persist(new Meta("Logica", "Resolver Listas de Logica Matematica.", Meta.Prioridade.media, "1° semana"));
 
-            dao.persist(new Meta("Javascript", "Aprender javascript para conseguir pagar SI1", "alta", "1° semana"));
+            dao.persist(new Meta("Saúde", "Correr todos os dias da semana as 5h da manha.", Meta.Prioridade.media, "1° semana"));
 
-            dao.persist(new Meta("BD", "Aprender BD para conseguir pagar SI1", "media", "2° semana"));
+            dao.persist(new Meta("Saúde", "Comer duas frutas por dia.", Meta.Prioridade.alta, "1° semana"));
 
-            dao.persist(new Meta("Play", "Aprender a mexer no play framework para conseguir pagar SI1", "baixa", "2° semana"));
+            dao.persist(new Meta("Filmes", "Assitir Big Hero 6.", Meta.Prioridade.baixa, "2° semana"));
 
-            dao.persist(new Meta("Física", "Estudar física para pagar a cadeira por média(ta pau)", "alta", "3° semana"));
+            dao.persist(new Meta("SI1", "Estudar SI1.", Meta.Prioridade.alta, "2° semana"));
 
-            dao.persist(new Meta("Lógica", "Estudar lógica matemática para conseguir uma nota maior na segunda prova", "media", "3° semana"));
+            dao.persist(new Meta("Prob", "Começar a estudar para Probabilidade e Estatistica.", Meta.Prioridade.alta, "1° semana"));
 
-            dao.persist(new Meta("Projeto", "Começar a estudar sobre padrões de projeto", "baixa", "3° semana"));
+            dao.persist(new Meta("Projeto", "Produzir os materiais do Projeto antes, para folgar um pouco nas ferias.", Meta.Prioridade.media, "3° semana"));
 
-            dao.persist(new Meta("Revisar", "Revisar os assunto aprendidos na semana", "media", "5° semana"));
+            dao.persist(new Meta("PLP", "Estudar Programacao Funcional para PLP.", Meta.Prioridade.media, "2° semana"));
 
-            dao.persist(new Meta("Período", "Pagar todas as cadeiras do período e conseguir projeto", "alta", "5° semana"));
+            dao.persist(new Meta("Ferias", "Sorrir quando chegarem as ferias.", Meta.Prioridade.alta, "3° semana"));
+
+            dao.persist(new Meta("Ferias", "Sorrir outra vez quando chegarem as ferias.", Meta.Prioridade.alta, "3° semana"));
         });
     }
 }
-*/

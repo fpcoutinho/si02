@@ -34,7 +34,7 @@ public class MetasTest {
         dao.persist(meta);
 
         List<Meta> metas = dao.findAllByClassName(Meta.class.getName());
-        assertThat(metas.get(0).getDescricao()).isEqualTo("SI1");
+        assertThat(metas.get(0).getDescricao()).isEqualTo("Logica Matematica");
         assertThat(metas.size()).isEqualTo(1);
 
     }

@@ -16,26 +16,27 @@ import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
- * Created by Erick on 20/11/14.
+ * Created by Filipe on 20/11/14.
  */
 public class MetasTest {
 
     private GenericDAO dao = new GenericDAO();
 
     @Test
-    public void deveIniciarSemMetas() throws Exception {
+    public void iniciaVzio() throws Exception {
         List<Meta> metas = dao.findAllByClassName(Meta.class.getName());
         assertThat(metas).isEmpty();
     }
 
     @Test
-    public void deveSalvarMetaNoBD() throws Exception {
-        Meta meta = new Meta("SI1", "Prioridade Alta", "Semana 6");
+    public void salvaMetaNoBD() throws Exception {
+        Meta meta = new Meta("Logic", "Logica Matematica", Meta.Prioridade.media, "Semana 4");
         dao.persist(meta);
 
         List<Meta> metas = dao.findAllByClassName(Meta.class.getName());
-        assertThat(metas.size()).isEqualTo(1);
         assertThat(metas.get(0).getDescricao()).isEqualTo("SI1");
+        assertThat(metas.size()).isEqualTo(1);
+
     }
 
     public EntityManager em;
